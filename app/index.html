@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Sunset — GTA 6-Style Cover Art Maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover editor">
+    <h1>Vice Sunset</h1>
+    <p class="tagline">Turn your photo into GTA 6-style cover art — multi-panel poster, bold caption, sunset grade. Three steps: add photos, write the caption, export.</p>
+
+    <h2>1 · Photos</h2>
+    <div id="panels" class="panels"></div>
+    <label class="file-label">One photo for all panels
+      <input id="one-photo" type="file" accept="image/*">
+    </label>
+    <button id="samples" type="button" class="secondary">Load sample photos</button>
+    <p class="hint">Photos stay on your machine — nothing is uploaded.</p>
+
+    <h2>2 · Layout &amp; grade</h2>
+    <div id="layouts" class="chips" role="group" aria-label="Panel layout"></div>
+    <div id="grades" class="chips" role="group" aria-label="Colour grade"></div>
+
+    <h2>3 · Caption</h2>
+    <label>Title <input id="title" type="text" maxlength="24" value="Sunset Heist"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="A Vice City Story"></label>
+    <label>Tagline <input id="tagline" type="text" maxlength="40" value="Coming soon · Neon Nights"></label>
+
+    <h2>4 · Crop the selected panel</h2>
+    <p id="panel-label" class="hint">Panel 1 — drag the preview to move it, scroll to zoom</p>
+    <label>Zoom <input id="zoom" type="range" min="1" max="3" step="0.01" value="1"></label>
+    <label>Move left–right <input id="panx" type="range" min="-0.5" max="0.5" step="0.01" value="0"></label>
+    <label>Move up–down <input id="pany" type="range" min="-0.5" max="0.5" step="0.01" value="0"></label>
+    <button id="reset-panel" type="button" class="secondary">Reset this panel</button>
+
+    <h2>5 · Export</h2>
+    <div id="sizes" class="chips" role="group" aria-label="Export size"></div>
+    <button id="export" type="button" class="export">Export PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+  <section class="preview" aria-label="Live preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover preview"></canvas>
+    <p class="hint">Live preview — drag a panel to reposition its photo.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

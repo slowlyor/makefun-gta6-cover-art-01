@@ -1,0 +1,39 @@
+/* Vice Sunset — neon dusk editor theme. System fonts only; no webfonts. */
+html, body { margin: 0; min-height: 100%; background: #160a24; color: #f5eefc; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 22px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 10px; width: 320px; flex: none; background: #22103a; border: 1px solid #4b2a6e; border-radius: 14px; padding: 18px; box-sizing: border-box; }
+.controls h1 { margin: 0; font-size: 32px; letter-spacing: 1px; text-transform: uppercase; font-family: "Arial Black", Impact, system-ui, sans-serif; background: linear-gradient(90deg, #ffe259, #ff7518 55%, #ff2e88); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.controls h2 { margin: 8px 0 0; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #ffb347; }
+.tagline { margin: 0; color: #cdb8e6; font-size: 13px; }
+.hint { margin: 0; color: #9d84b8; font-size: 12px; }
+label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; }
+input[type=text] { font: inherit; padding: 8px 10px; border: 1px solid #6b4a94; border-radius: 8px; background: #160a24; color: #fff; }
+input[type=range] { width: 100%; accent-color: #ff2e88; }
+button { font: inherit; font-weight: 700; padding: 10px 12px; border: 0; border-radius: 8px; background: #ff2e88; color: #fff; cursor: pointer; }
+button:hover { filter: brightness(1.12); }
+button.secondary { background: #3d2360; color: #f5eefc; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: #3d2360; color: #e9dcf8; font-weight: 600; font-size: 12px; padding: 7px 9px; }
+.chip.active { background: #ff7518; color: #fff; }
+.panels { display: flex; flex-direction: column; gap: 6px; }
+.panel-slot { display: flex; gap: 6px; }
+.panel-pick { flex: 1; background: #3d2360; text-align: left; font-size: 13px; }
+.panel-pick.active { outline: 2px solid #ffb347; }
+.panel-upload { background: #6b4a94; padding: 8px; font-size: 12px; }
+.file-label { cursor: pointer; }
+.file-label input { display: none; }
+.export { background: linear-gradient(90deg, #ff7518, #ff2e88); font-size: 16px; padding: 13px; }
+#status { min-height: 1.2em; color: #8dff9e; font-size: 13px; margin: 0; }
+.preview { display: flex; flex-direction: column; gap: 10px; align-items: center; position: sticky; top: 22px; }
+.preview canvas { width: min(78vh, 62vw); max-width: 760px; height: auto; aspect-ratio: auto; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); border-radius: 4px; cursor: grab; }
+.preview canvas:active { cursor: grabbing; }
+body.shot-cover .controls, body.shot-cover .preview .hint { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover .preview { position: static; }
+body.shot-cover canvas { width: 100vw; height: 100vh; max-width: none; border-radius: 0; box-shadow: none; object-fit: contain; background: #12081f; }
+@media (max-width: 900px) {
+  .app { flex-direction: column; align-items: center; }
+  .controls { width: 100%; max-width: 560px; }
+  .preview { position: static; }
+  .preview canvas { width: 100%; }
+}
